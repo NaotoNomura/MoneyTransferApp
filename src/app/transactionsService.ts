@@ -7,6 +7,6 @@ export class TransactionsService {
     constructor(private http: Http) {}
 
     getTransactions ():any {
-        return this.http.get('data/tasks.json').map(res => res.json())
+        return this.http.get('data/transactions.json').map(res => res.json())
     }
 }

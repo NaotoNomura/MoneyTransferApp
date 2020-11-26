@@ -7,21 +7,21 @@ import { TransactionsService } from './transactionsService'
 })
 export class AppComponent {
   language: string
-  tasksList: Array<any>
+  transactionsList: Array<any>
   error: string
   constructor(private service: TransactionsService) {}
 
   ngOnInit ():void {
     this.service.getTransactions()
       .subscribe(
-        data => this.tasksList = data,
+        data => this.transactionsList = data,
         error => this.error = error.statusText
       )
     this.language = "en"
   }
 
   onAddTransaction(item):void {
-    this.tasksList.push({
+    this.transactionsList.push({
       categoryCode: '#12a580',
       iconSrcPath: '../assets/icons/backbase.png',
       dates: {
@@ -44,7 +44,7 @@ export class AppComponent {
   }
 
   sortByDate ():any {
-    this.tasksList.sort((a, b) => {
+    this.transactionsList.sort((a, b) => {
       return <any>new Date(b.dates.valueDate) - <any>new Date(a.dates.valueDate)
     })
   }

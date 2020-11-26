@@ -8,7 +8,7 @@ import { Input } from '@angular/core';
 })
 export class TransfersListComponent implements OnInit {
 
-  @Input() tasks: Array<any>
+  @Input() transactions: Array<any>
   searchText: string
   dateSortAscendingIndicator: boolean
   amountSortAscendingIndicator: boolean
@@ -34,12 +34,12 @@ export class TransfersListComponent implements OnInit {
 
   sortByDate (): any {
     if(this.dateSortAscendingIndicator) {
-      return this.tasks.sort((a, b) => {
+      return this.transactions.sort((a, b) => {
         return <any>new Date(b.dates.valueDate) - <any>new Date(a.dates.valueDate)
       })
     }
     else {
-      return this.tasks.sort((a, b) => {
+      return this.transactions.sort((a, b) => {
         return <any>new Date(a.dates.valueDate) - <any>new Date(b.dates.valueDate)
       })
     }
@@ -52,12 +52,12 @@ export class TransfersListComponent implements OnInit {
 
   sortByAmouont ():any {
     if(this.amountSortAscendingIndicator) {
-      return this.tasks.sort((a, b) => {
+      return this.transactions.sort((a, b) => {
         return b.transaction.amountCurrency.amount - a.transaction.amountCurrency.amount
       })
     }
     else {
-      return this.tasks.sort((a, b) => {
+      return this.transactions.sort((a, b) => {
         return a.transaction.amountCurrency.amount - b.transaction.amountCurrency.amount
       })
     }
@@ -70,12 +70,12 @@ export class TransfersListComponent implements OnInit {
 
   sortByBeneficiary ():any {
     if(this.beneficiarySortAscendingIndicator) {
-      return this.tasks.sort((a,b) => {
+      return this.transactions.sort((a,b) => {
         return b.merchant.name.localeCompare(a.merchant.name)
       })
     }
     else {
-      return this.tasks.sort((a,b) => {
+      return this.transactions.sort((a,b) => {
         return a.merchant.name.localeCompare(b.merchant.name)
       })
     }

@@ -34,7 +34,7 @@
                 <div class="flat-panel-body">
                     <table class="no-border table">
                         <tbody class="no-border">
-                            <tr *ngFor="let item of tasks | FilterPipe:searchText">
+                            <tr *ngFor="let item of transactions | FilterPipe:searchText">
                                 <td class="text-center colorItem" [ngStyle]="{'background-color': item.categoryCode }"></td>
                                 <td class="dateRow">{{ item.dates.valueDate | date:'MMM d' }}</td>
                                 <td class="text-center"><img src="{{ item.iconSrcPath }}" class="imgBlock" alt="Beneficiary logo" /></td>
