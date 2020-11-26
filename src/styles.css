@@ -1,0 +1,22 @@
+.logoBlock {
+    margin-bottom: 40px;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    border-bottom: 1px solid #e25a2c;
+    border-top: 1px solid #e25a2c;
+}
+
+.titleLogo {
+    display: block;
+    width: auto;
+    height: auto;
+    background-position: top;
+}
+
+@media only screen and (max-width: 767px) {
+    .titleLogo {
+        width: 200px;
+    }
+}

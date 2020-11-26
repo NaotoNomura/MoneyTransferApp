@@ -1,0 +1,69 @@
+.list {
+    display: block;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+    font-family: 'Kanit', sans-serif;
+    background-color: white;
+}
+
+.accountFrom {
+    font-size: 14px;    
+    height: auto;
+}
+
+.btnBlock {
+    text-align: right;
+}
+
+.formBlock {
+    padding: 10px;
+}
+
+.formBlock {
+    margin-top: 15px;
+}
+
+label {
+    border: none;
+}
+
+input {    
+    border: none;
+}
+
+.panelHeader {
+    background-color: #1180aa;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.inputBlock {
+    border-bottom: 1px solid #ccc;
+}
+
+.accountFromBlock {
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.submitBtn {
+    background-color: #e25a2c;
+    border-color:   #e25a2c;
+    color: white;
+}
+
+.sectionHeader {
+    font-weight: bold;
+}
+
+.icon {
+    opacity: 0.8;
+    float: left;
+}
+
+@media only screen and (max-width: 767px) {
+    .rightColumnBlock {
+        display: none;
+    }
+}

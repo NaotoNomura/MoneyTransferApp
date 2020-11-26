@@ -1,0 +1,36 @@
+<div>
+  <div class="header">
+    <span class="glyphicon glyphicon-briefcase icon"></span> <span *ngIf="language === 'en'">Transfer preview</span>
+    <span *ngIf="language === 'pl'">Podgląd transakcji</span>
+  </div>
+  <div class="contentBlock">
+    <div class="row itemBlock">
+      <div class="col-xs-6 sectionHeader"><label *ngIf="language === 'en'">From account:</label>
+        <label *ngIf="language === 'pl'">Z konta:</label></div>
+      <div class="col-xs-6">
+        <div class="font-body-1">Free Checking(4692)</div>
+        <div>
+          {{ accountFromRemainingAmount | currency:'EUR':true }}
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row itemBlock">
+      <div class="col-xs-6 sectionHeader"><label *ngIf="language === 'en'">To account:</label>
+        <label *ngIf="language === 'pl'">Na konto:</label></div>
+      <div class="col-xs-6 font-body-1">
+        <div>{{ accountTo }}</div>
+      </div>
+    </div>
+    <hr>
+    <div class="row itemBlock">
+      <div class="col-xs-6 sectionHeader"><label *ngIf="language === 'en'">Amount:</label>
+        <label *ngIf="language === 'pl'">Kwota:</label></div>
+      <div class="col-xs-6 font-body-1">
+        <div>{{ amount | currency:'EUR':true }}</div>
+      </div>
+    </div>
+    <div class="btnBlock"><button type="submit" class="btn transferBtn" *ngIf="language === 'en'" (click)="sendTransaction()">TRANSFER</button>
+    <button type="submit" class="btn transferBtn" *ngIf="language === 'pl'" (click)="sendTransaction()">Wyślij</button></div>
+  </div>
+</div>

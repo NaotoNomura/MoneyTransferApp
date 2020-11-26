@@ -1,0 +1,40 @@
+<div class="list">
+  <div *ngIf="!showPreview">
+    <div class="panelHeader">
+      <img src="../../assets/icons/arrows.png" class="icon"> <span class="header" *ngIf="language === 'en'">Make a transfer</span>
+      <span class="header" *ngIf="language === 'pl'">Wykonaj przelew</span>
+    </div>
+    <form class="formBlock">
+        <div class="form-group inputBlock accountFromBlock sectionHeader">
+          <label *ngIf="language === 'en'">FROM ACCOUNT</label>
+          <label *ngIf="language === 'pl'">Z KONTA</label>
+          <label class="form-control accountFrom" >{{accountFrom}}</label>
+        </div>
+        <div class="form-group inputBlock sectionHeader">
+          <label *ngIf="language === 'en'">TO ACCOUNT</label>
+          <label *ngIf="language === 'pl'">NA KONTO</label>
+          <input type="text" #name="ngModel" id="accountTo" name="accountTo" placeholder="Georgia Power Electric Company" [(ngModel)]="accountTo" required [ngModelOptions]="{standalone: true}" class="form-control">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <span class="help-block">This field is required</span>
+          </div>
+        </div>
+        <div class="form-group inputBlock sectionHeader">
+            <label *ngIf="language === 'en'">AMOUNT</label>
+            <label *ngIf="language === 'pl'">KWOTA</label>
+            <input type="number" id="amount" name="amount" (keyup)="setShowBalanceError()" #amt="ngModel" required placeholder="€ 0.00" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}" class="form-control">
+            <div *ngIf="amt.invalid && (amt.dirty || amt.touched)" class="alert alert-danger">
+              <span *ngIf="language === 'en'" class="help-block">This field is required</span>
+              <span *ngIf="language === 'pl'" class="help-block">To pole jest wymagane</span>
+            </div>
+        </div>
+        <div class="btnBlock"><button type="submit" class="btn submitBtn" (click)="openPreview()" *ngIf="language === 'en'">SUBMIT</button>
+          <button type="submit" class="btn submitBtn" (click)="openPreview()" *ngIf="language === 'pl'">POTWIERDŹ</button></div>
+        
+        <div *ngIf="showBalanceError" class="alert alert-danger">
+          <span *ngIf="language === 'en'" class="help-block">Balance amount cannot be lower than -500€</span>
+          <span *ngIf="language === 'pl'" class="help-block">Balans kwoty nie może być niższy niż -500€</span>
+        </div>
+    </form>
+  </div>
+  <preview *ngIf="showPreview" (makeTransaction)="sendTransaction()" [language]="language" [accountTo]="accountTo" [amount]="amount" [accountFromRemainingAmount]="accountFromRemainingAmount"></preview>
+</div>

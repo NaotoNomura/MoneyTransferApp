@@ -1,0 +1,20 @@
+<div class="row">  
+  <div class="accountDetails col-lg-3 col-lg-offset-1 col-md-4">
+    <add-transfer (addTransaction)="onAddTransaction($event)"  [language]="language">
+    </add-transfer>
+    <div class="form-group formSelect">
+      <label *ngIf="language === 'en'">Choose a language:</label>
+      <label *ngIf="language === 'pl'">Wybierz język:</label>
+      <select class="form-control" [(ngModel)]="language">
+        <option *ngIf="language === 'en'" value="en">English</option>
+        <option *ngIf="language === 'en'" value="pl">Polish</option>
+        <option *ngIf="language === 'pl'" value="en">Angielski</option>
+        <option *ngIf="language === 'pl'" value="pl">Polski</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-lg-7 col-md-8">
+    <transfers-list [tasks]="tasksList" [language]="language"></transfers-list>
+  </div>
+  <div class="col-lg-1 rightColumnBlock"></div>
+</div>

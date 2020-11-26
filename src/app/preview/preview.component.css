@@ -1,0 +1,28 @@
+.itemBlock {
+    margin-bottom: 24px;
+}
+
+.header {
+    background-color: #1180aa;
+    padding: 10px;
+    color: white;
+}
+
+.contentBlock {
+    padding: 10px;
+}
+
+.sectionHeader {
+    font-weight: bold;
+    text-align: right;
+}
+
+.transferBtn {
+    background-color: #e25a2c;
+    border-color:   #e25a2c;
+    color: white;
+}
+
+.btnBlock {
+    text-align: right;
+}

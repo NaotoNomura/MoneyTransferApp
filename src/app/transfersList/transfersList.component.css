@@ -1,0 +1,115 @@
+.accountDetails {
+    padding-bottom: 20px;
+}
+
+.panelHeader {
+    background-color: #1180aa;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.history {    
+    font-family: 'Kanit', sans-serif;
+    background-color: white;
+    display: block;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+    font-family: 'Kanit', sans-serif;
+    background-color: white;
+}
+
+.header {
+    text-align: center;
+    font-size: 20px;
+}
+
+.transactionsHistoryBlock {
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.colorItem {
+    width: 5px;
+    padding: 4px;
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.inputContainer > span {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+.inputContainer input {
+    padding-left: 40px;
+}
+
+.icon {
+    opacity: 0.8;    
+    float: left;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.beneficiaryRow {
+    vertical-align: middle;
+}
+
+.dateRow {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.amountRow {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.btnGroupBlock {
+    display: inline-block;
+}
+
+.flatPanelBody {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: white;
+    border-color: #6c757d;
+}
+
+.removeIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.imgBlock {
+    width: 75px;
+    height: 75px;
+}
+
+.sortByLabelBlock {
+    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .inputContainer > span {
+        position: relative;
+        top: -24px;
+        left: 12px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .imgBlock {
+        width: 60px;
+        height: 60px;
+    }
+}
+
