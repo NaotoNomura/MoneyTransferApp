@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
 
 @Component({
   selector: 'transfers-list',
@@ -14,6 +13,7 @@ export class TransfersListComponent implements OnInit {
   amountSortAscendingIndicator: boolean
   beneficiarySortAscendingIndicator: boolean
   @Input('language') language: string
+
   constructor () {}
 
   ngOnInit(): void {

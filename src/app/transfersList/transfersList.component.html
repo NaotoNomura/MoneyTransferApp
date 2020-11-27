@@ -7,8 +7,6 @@
             </div>
             <div class="flatPanelBody">
                 <div class="form-horizontal formBlock">
-                    <div id="input-container">
-                      </div>
                     <div class="form-group col-md-6 inputContainer">
                         <input id="filter-by-keyword" *ngIf="language === 'en'" [(ngModel)]="searchText" type="text" placeholder="Search by typing" class="form-control">
                         <input id="filter-by-keyword" *ngIf="language === 'pl'" [(ngModel)]="searchText" type="text" placeholder="Szukaj przez wpisanie" class="form-control">                      
@@ -30,21 +28,17 @@
 
     <div class="row transactionsHistoryBlock">
         <div class="col-xs-12">
-            <div class="flat-panel">
-                <div class="flat-panel-body">
-                    <table class="no-border table">
-                        <tbody class="no-border">
-                            <tr *ngFor="let item of transactions | FilterPipe:searchText">
-                                <td class="text-center colorItem" [ngStyle]="{'background-color': item.categoryCode }"></td>
-                                <td class="dateRow">{{ item.dates.valueDate | date:'MMM d' }}</td>
-                                <td class="text-center"><img src="{{ item.iconSrcPath }}" class="imgBlock" alt="Beneficiary logo" /></td>
-                                <td class="beneficiaryRow"><p><b>{{ item.merchant.name }}</b></p><span>{{ item.transaction.type }}</span></td>
-                                <td class="text-center amountRow">-{{ item.transaction.amountCurrency.amount | currency:item.transaction.amountCurrency.currencyCode:true }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <table class="no-border table">
+                <tbody>
+                    <tr *ngFor="let item of transactions | FilterPipe:searchText">
+                        <td class="text-center colorItem" [ngStyle]="{'background-color': item.categoryCode }"></td>
+                        <td class="dateRow">{{ item.dates.valueDate | date:'MMM d' }}</td>
+                        <td class="text-center"><img src="{{ item.iconSrcPath }}" class="imgBlock" alt="Beneficiary logo" /></td>
+                        <td class="beneficiaryRow"><p><b>{{ item.merchant.name }}</b></p><span>{{ item.transaction.type }}</span></td>
+                        <td class="text-center amountRow">-{{ item.transaction.amountCurrency.amount | currency:item.transaction.amountCurrency.currencyCode:true }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

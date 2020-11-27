@@ -30,7 +30,9 @@
         <div>{{ amount | currency:'EUR':true }}</div>
       </div>
     </div>
-    <div class="btnBlock"><button type="submit" class="btn transferBtn" *ngIf="language === 'en'" (click)="sendTransaction()">TRANSFER</button>
-    <button type="submit" class="btn transferBtn" *ngIf="language === 'pl'" (click)="sendTransaction()">Wyślij</button></div>
+    <div class="btnBlock">
+      <button type="submit" class="btn transferBtn" *ngIf="language === 'en'" (click)="sendTransaction()">TRANSFER</button>
+      <button type="submit" class="btn transferBtn" *ngIf="language === 'pl'" (click)="sendTransaction()">Wyślij</button>
+    </div>
   </div>
 </div>

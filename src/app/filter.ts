@@ -4,10 +4,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class Filter implements PipeTransform {
   transform(items: any[], searchText: string) {
     if (!items) {
-      return [];
+      return []
     }
     if (!searchText) {
-      return items;
+      return items
     }
 
     searchText = searchText.toLowerCase()

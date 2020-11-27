@@ -1,7 +1,6 @@
 <div class="row">  
   <div class="accountDetails col-lg-3 col-lg-offset-1 col-md-4">
-    <add-transfer (addTransaction)="onAddTransaction($event)"  [language]="language">
-    </add-transfer>
+    <add-transfer (addTransaction)="onAddTransaction($event)"  [language]="language"></add-transfer>
     <div class="form-group formSelect">
       <label *ngIf="language === 'en'">Choose a language:</label>
       <label *ngIf="language === 'pl'">Wybierz język:</label>

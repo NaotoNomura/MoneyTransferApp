@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { TransactionsService } from './transactionsService'
+
 @Component({
   selector: 'app-component',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   language: string
   transactionsList: Array<any>
